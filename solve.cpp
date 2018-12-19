@@ -8,8 +8,10 @@
 using namespace std;
 
 vector<string> tokenize(string str, char delim);
-void printVec(vector<string> vec);
 void strRemove(string str);
+template <typename T> void printVec(vector<T> vec);
+template <typename T> void print2dVec(vector<vector<T>> mat);
+
 
 
 int main(int argc, char** argv){
@@ -23,15 +25,21 @@ int main(int argc, char** argv){
   return 0; 
 }
 
+
+/***********************PREPROCESSING*****************************/
 void strRemove(string str, char remove){
   str.erase(std::remove(str.begin(), str.end(), remove), str.end());
 }
 
-void printVec(vector<string> vec){
+template <typename T> void printVec(vector<T> vec){
   for(int i=0;i<vec.size();i++){
     cout << "\'"<< vec[i]<<"\',";
   }
   cout << endl;
+}
+
+template <typename T> void print2dVec(vector<vector<T>> mat){
+    for(int i=0;i<mat.size();i++) printVec(mat[i]);
 }
 
 vector<string> tokenize(string line, char delim){
@@ -42,3 +50,5 @@ vector<string> tokenize(string line, char delim){
     tokens.push_back(intermidiate);
   return tokens;
 }
+
+/****************************PREPROCESSING**********************/

@@ -31,16 +31,22 @@ def plant_spread(plants , patterns):
 			spread += patterns[int(pattern,2)]
 		else: spread += '0'
 	return spread
+
+
+'''
+This part is hard coded you just gotta look until your 'pattern' converge. If pattern repeat they gotta converge :D. 
+Happy calculus sucker. 
+'''
 def billionGeneration(pattern='#...#...#...#...#...#...#...#...#.####...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#..####...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#..####'):
 	indexes = []
-	start = 5000000000-74#74: counted by eyeballing
+	start = 50000000000-83#74: counted by eyeballing
 	for index,x in enumerate(pattern):
 		if(x == '#'): indexes.append(index+1)
 	
 	total = 0
 	for i in indexes:
 		total += (start+i)
-	print((5000000000-83)*sum(indexes))
+	print((50000000000-83)*sum(indexes))
 	return total 
 
 if __name__  == '__main__': 
@@ -59,7 +65,7 @@ if __name__  == '__main__':
 	print(init)
 	print(patterns)
 	next = init
-	for gen in range(21):
+	for gen in range(401):
 		
 		print('pattern',findLeadingZero(next),'gen',gen,next.replace('1','#').replace('0','.') )
 		result = next[4:]
@@ -86,6 +92,6 @@ You don't know the characteristic of it. You collect data and found that Every d
 cosine. Same idea in this case. If you take enough data point on the same set of derivative(all the LLCRR -> '') is the 
 set of derivative of how the forest is changing. take that to the limit. there gotta be pattern at some point. 
 converge at. '#...#...#...#...#...#...#...#...#.####...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#..####...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#..####'
-265000000519 
+2650000000466
 [1, 5, 9, 13, 17, 21, 25, 29, 33, 35, 36, 37, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86, 90, 94, 98, 102, 106, 109, 110, 111, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 175, 176, 177, 178]                           >>> start = 4999999918                                                                 >>> total = 0                                                                          >>> for i in indexes:                                                                  ...   total = (start+i)                                                                ...                                                                                    >>> total                                                                              5000000096                                                                             >>> for i in indexes:                                                                  ...   total = (start+i)                                                                ...   print(i)                                                                         ...             
 '''
